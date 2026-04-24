@@ -9,3 +9,4 @@ tsconfig.tsbuildinfo
 *.tsbuildinfo
 .env
 .env.local
+*.zip
