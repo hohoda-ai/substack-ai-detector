@@ -1,6 +1,16 @@
 # Substack AI Detector
 
+[![GitHub release](https://img.shields.io/github/v/release/hohoda-ai/substack-ai-detector?style=flat-square&color=6366f1)](https://github.com/hohoda-ai/substack-ai-detector/releases/latest)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
+[![Manifest V3](https://img.shields.io/badge/manifest-v3-blue?style=flat-square)](https://developer.chrome.com/docs/extensions/develop/migrate)
+
 A Chrome extension that flags AI-generated **Substack notes** in real time.
+
+> **Quick install (no build required):**
+> [⬇️ Download the latest release](https://github.com/hohoda-ai/substack-ai-detector/releases/latest)
+> · unzip · open `chrome://extensions` · enable Developer mode · **Load unpacked** the unzipped folder.
+>
+> Prefer to build from source? Jump to [Build from source](#build-from-source).
 
 Each note grows a small color-coded pill next to its reply icons:
 
@@ -52,10 +62,17 @@ Switch to LLM API to route every note through OpenAI / DeepSeek / Ollama / LM St
 
 ## Install
 
-1. Build (or grab a prebuilt `dist/`).
-2. Open `chrome://extensions` and toggle **Developer mode** (top-right).
-3. Click **Load unpacked** and select the `dist/` folder.
-4. Visit any Substack page — open `https://substack.com/notes`, your home feed, or any post — and badges will appear next to each note.
+### Option A — Prebuilt release (recommended)
+
+1. Download `substack-ai-detector-vX.Y.Z.zip` from the [latest release](https://github.com/hohoda-ai/substack-ai-detector/releases/latest).
+2. Unzip it anywhere on your machine.
+3. Open `chrome://extensions` and toggle **Developer mode** (top-right).
+4. Click **Load unpacked** and select the unzipped folder (the one containing `manifest.json`).
+5. Visit any Substack page — open `https://substack.com/notes`, your home feed, or any post — and badges appear next to each note.
+
+### Option B — Build from source
+
+See [Build from source](#build-from-source) below.
 
 That's it. Default mode is **local**; no key, no setup.
 
