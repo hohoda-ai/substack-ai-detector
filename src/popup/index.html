@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Substack AI Detector</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">🔍</div>
+      <div>
+        <h1>Substack AI Detector</h1>
+        <p class="subtitle">Local model or any OpenAI-compatible API</p>
+      </div>
+    </header>
+
+    <section class="block">
+      <label class="switch">
+        <input id="enabled" type="checkbox" />
+        <span>Auto-detect notes</span>
+      </label>
+    </section>
+
+    <section class="block">
+      <label class="block-label">Detection mode</label>
+      <div class="seg" role="tablist">
+        <button id="mode-local" class="seg-btn" data-mode="local">Local model</button>
+        <button id="mode-api" class="seg-btn" data-mode="api">LLM API</button>
+      </div>
+      <p id="mode-hint" class="hint"></p>
+    </section>
+
+    <section id="api-block" class="block hidden">
+      <label class="block-label" for="preset">Preset</label>
+      <select id="preset"></select>
+
+      <label class="block-label" for="baseURL">Base URL</label>
+      <input id="baseURL" type="text" spellcheck="false" placeholder="https://api.openai.com/v1" />
+
+      <label class="block-label" for="apiKey">API Key</label>
+      <input id="apiKey" type="password" spellcheck="false" placeholder="sk-..." />
+
+      <label class="block-label" for="model">Model</label>
+      <input id="model" type="text" spellcheck="false" placeholder="gpt-4o-mini" />
+
+      <label class="block-label" for="systemPrompt">System prompt</label>
+      <textarea id="systemPrompt" rows="6" spellcheck="false"></textarea>
+
+      <div class="row-split">
+        <button id="test" class="ghost">Test connection</button>
+        <span id="test-result" class="hint"></span>
+      </div>
+    </section>
+
+    <section class="block">
+      <label class="block-label">Thresholds</label>
+      <div class="threshold-row">
+        <span class="dot mixed"></span>
+        <span>Mixed ≥</span>
+        <input id="th-mixed" type="number" min="0" max="1" step="0.05" />
+      </div>
+      <div class="threshold-row">
+        <span class="dot ai"></span>
+        <span>AI ≥</span>
+        <input id="th-ai" type="number" min="0" max="1" step="0.05" />
+      </div>
+    </section>
+
+    <section class="legend">
+      <span class="pill human">🌱 Human</span>
+      <span class="pill mixed">⚠️ Mixed</span>
+      <span class="pill ai">🤖 AI</span>
+    </section>
+
+    <footer>
+      <button id="save" class="primary">Save</button>
+      <span id="save-status" class="hint"></span>
+    </footer>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
